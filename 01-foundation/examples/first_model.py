@@ -5,7 +5,7 @@ class User(BaseModel):
     name: str
     is_active: bool
 
-input_data = {'id':101, 'name':"ChaiCode",'is_active':True}
+input_data = {'id':'101', 'name':"ChaiCode",'is_active':True}
 # pydantic will try by itself to convert the data type to the declared data type as in above example we can, pydantic converted the 'True' to True which is in boolean, so it did not give any error, 
 # TEST CASES !!!!!!
 # input_data = {'id':101, 'name':"ChaiCode",'is_active':'sahi'}
@@ -19,6 +19,9 @@ input_data = {'id':101, 'name':"ChaiCode",'is_active':True}
 
 # input_data = {'id':101, 'name':"ChaiCode",'is_active':10}
 #it did not worked!!
+
+# input_data = {'id':'101', 'name':"ChaiCode",'is_active':True}
+#it also worked!!
 
 
 user = User(**input_data)
